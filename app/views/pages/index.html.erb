@@ -1,0 +1,20 @@
+<div ng-app="app" >
+  <div class="box" ng-controller="stuffCtrl">
+    <div id="todos">
+      <h2>Todo List</h2>
+      <div ng-repeat="task in tasks track by $index">
+        <p ng-click="hideTask(task)" ng-class="{strike: task.completed}">{{ task.text }}</p>
+        
+      </div>
+    </div>
+    <div>
+       <p>There are {{ incompleteTasks() }} incomplete tasks.</p>
+    </div>
+    <h3>a new todo item:</h3>
+     <input ng-model="newTodo">
+     <button ng-click="addTodo(newTodo)" > Add Item!</button>
+    <div>
+      <button ng-click="deletecompleted()">Delete Completed Items.</button>
+    </div>
+  </div>
+</div>
